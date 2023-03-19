@@ -146,7 +146,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     } else {
                       newUserList = [];
                       user.forEach((element) {
-                        if (element.name.toLowerCase().startsWith(value) || element.name.startsWith(value)) {
+                        if (element.name.toLowerCase().startsWith(value) ||
+                            element.name.startsWith(value)) {
                           newUserList.add(element);
                         }
                       });
@@ -171,14 +172,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 15,
               ),
               (newUserList.length == 0)
-                  ? Container(
-                      height: 200,
-                      width: 200,
-                      alignment: Alignment.center,
-                      child: Text(
-                        "No Person found",
-                        style: TextStyle(fontSize: 16),
-                      ))
+                  ? Flexible(
+                      child: Container(
+                          // height: 200,
+                          // width: 200,
+                          alignment: Alignment.center,
+                          child: Text(
+                            "No Person found",
+                            style: TextStyle(fontSize: 16),
+                          )),
+                    )
                   : Expanded(
                       child: ListView.builder(
                           padding: const EdgeInsets.all(0.0),
