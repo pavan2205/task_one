@@ -195,7 +195,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                 },
                                 name: newUserList[index].name,
                                 imgurl: newUserList[index].imgurl);
-                          })),
+                          }),
+                    ),
             ],
           ),
         ),
