@@ -120,48 +120,46 @@ class _SecondScreenState extends State<SecondScreen> {
           const SizedBox(
             height: 60,
           ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
-                  child: GestureDetector(
-                    child: Text(
-                      'Add people',
-                      style: TextStyle(fontSize: 25, color: _addPeopleColor),
-                    ),
-                    onTap: () {
-                      _isConfirmVisible = true;
-                      setState(() {
-                        _inviteColor = Colors.black;
-                        _addPeopleColor = Colors.blue;
-                      });
-                    },
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
+                child: GestureDetector(
+                  child: Text(
+                    'Add people',
+                    style: TextStyle(fontSize: 25, color: _addPeopleColor),
                   ),
+                  onTap: () {
+                    _isConfirmVisible = true;
+                    setState(() {
+                      _inviteColor = Colors.black;
+                      _addPeopleColor = Colors.blue;
+                    });
+                  },
                 ),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(0, 0, 24, 0),
-                  child: GestureDetector(
-                    child: Text(
-                      "Invite +",
-                      style: TextStyle(
-                        fontSize: 25,
-                        color: _inviteColor,
-                      ),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(0, 0, 24, 0),
+                child: GestureDetector(
+                  child: Text(
+                    "Invite +",
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: _inviteColor,
                     ),
-                    onTap: () {
-                      showInvite = true;
-                      _isConfirmVisible = false;
-                      setState(() {
-                        _inviteColor = Colors.blue;
-                        _addPeopleColor = Colors.black;
-                      });
-                    },
                   ),
+                  onTap: () {
+                    showInvite = true;
+                    _isConfirmVisible = false;
+                    setState(() {
+                      _inviteColor = Colors.blue;
+                      _addPeopleColor = Colors.black;
+                    });
+                  },
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           const SizedBox(
             height: 40.0,
