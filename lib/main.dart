@@ -2,6 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:task_one/secondscreen.dart';
 import 'items.dart';
 import 'details/userdetails.dart';
 
@@ -180,8 +181,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: Text(
                             "No Person found",
                             style: TextStyle(fontSize: 16),
-                          )),
-                    )
+                          )))
                   : Expanded(
                       child: ListView.builder(
                           padding: const EdgeInsets.all(0.0),
@@ -193,10 +193,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                   numOfPeopleAdded += p0;
                                   setState(() {});
                                 },
+                                selectedIndex: (index) {
+                                  setState(() {});
+                                },
+                                cardIndex: index,
                                 name: newUserList[index].name,
+                                email: newUserList[index].email,
                                 imgurl: newUserList[index].imgurl);
                           }),
                     ),
+              const SizedBox(
+                height: 40.0,
+              ),
             ],
           ),
         ),
@@ -204,7 +212,12 @@ class _MyHomePageState extends State<MyHomePage> {
           width: 154,
           height: 40,
           child: FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SecondScreen()),
+              );
+            },
             backgroundColor: const Color(0xFFFF0000),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
